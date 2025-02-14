@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .form-container {
+            color:#fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            width: 440px;
+            background-color: #FE5220;
+        }
+
+        h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            width: 100%;
+            max-width: 386px;
+            margin-bottom: 29px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <title>партнеры клининговой фирмы</title>
+    <header>
+        <h1>Автосервис</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="podpiska.html">Услуги</a></li>
+                <li><a href="podpiska-start.html">Создать заявку</a></li>
+                <li><a href="revers.html">Связаться с поддержкой</a></li>
+                <li id="profileLink" style="display: none;" class="dropdown">
+                    <span id="usernameDisplay"></span>
+                    <div class="dropdown-content">
+                        <a href="#" id="logoutButton">Выход</a>
+                    </div>
+                </li>
+                <li><a href="login.html" id="loginLink" style="display: inline;">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+            <div class="form-container">
+                <h2>Создание заявки</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="object-type">Тип обслуживания авто</label>
+                        <select id="object-type">
+                            <option value="">Выбрать ▼</option>
+                            <option value="apartment">haval</option>
+                            <option value="house">Toyota</option>
+                            <option value="office">Lada</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area">Адрес</label>
+                        <input type="text" id="area" placeholder="Введите площадь">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cleaning-type">Время</label>
+                        <select id="cleaning-type">
+                            <option value="">Выбрать ▼</option>
+                            <option value="regular">Утро</option>
+                            <option value="general">День</option>
+                            <option value="after-repair">Вечер</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" placeholder="Введите ваше имя">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Ваш телефон*</label>
+                        <input type="tel" id="phone" placeholder="Введите ваш телефон" required>
+                    </div>
+
+                    <button type="submit">Заказать</button>
+                </form>
+            </div>
+    </main>
+
+    <footer>
+        <p>Автосервис</p>
+    </footer>
+
+
+    </body>
+
+</html>

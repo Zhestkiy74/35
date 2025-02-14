@@ -1,0 +1,77 @@
+.cardP {
+    color: white;
+    width: 318px;
+    background-color: #FE5220;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 0 20px;
+}
+
+.cardP img{
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    
+    width: 365px; /* Фиксированная ширина */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+}
+.cardP .imageOver{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 226px;
+}
+.cardP p{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+.cardP h1{
+    margin: 20px 0 0 0 ;
+    font-size: 20px;
+}
+.cardP a{
+    width: 100%;
+    max-width: 325px;
+}
+.cardP button{
+    margin-bottom: 25px;
+    border-radius: 6px;
+}
+.cards-container {
+    display: grid;
+    gap: 16px; /* Расстояние между карточками */
+    padding: 16px;
+}
+
+@media (min-width: 1440px){
+    .cards-container {
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    }
+    .cardP {
+        width: 365px;
+
+    }
+}
+@media (max-width: 1440px){
+    .cards-container {
+    grid-template-columns: repeat(2, 1fr); /* Три колонки */
+    }
+    .cardP {
+        width: 318px;
+
+    }
+}
+@media (max-width: 768px){
+    .cards-container {
+        padding: 0;
+        grid-template-columns: repeat(1, 1fr); /* Три колонки */
+    }
+    .cardP {
+        width: 318px;
+    
+    }
+}

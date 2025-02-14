@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="podpiska.css">
+    <title>партнеры клининговой фирмы</title>
+    <header>
+        <h1>Автосервис</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="podpiska.html">Услуги</a></li>
+                <li><a href="podpiska-start.html">Создать заявку</a></li>
+                <li><a href="revers.html">Связаться с поддержкой</a></li>
+                <li id="profileLink" style="display: none;" class="dropdown">
+                    <span id="usernameDisplay"></span>
+                    <div class="dropdown-content">
+                        <a href="#" id="logoutButton">Выход</a>
+                    </div>
+                </li>
+                <li><a href="login.html" id="loginLink" style="display: inline;">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="cards-container" id="cards-container"></div>
+    </main>
+    <footer>
+        <p>Автосервис</p>
+    </footer>
+
+    <script>
+const cardsData = [
+            {
+                duration: "Замена масла: Стандарт +",
+                descr: "Замена моторного масла и масляного фильтра",
+                descr1: "Замена воздушного фильтра",
+                descr2: "",
+                descr3: "",
+                price: "Скидка -5%",
+                buttonText: "Записаться"
+            },
+            {
+                duration: "Замена масла: Стандарт +",
+                descr: "Замена моторного масла и масляного фильтра",
+                descr1: "Замена воздушного фильтра",
+                descr2: "Замена салонного фильтра",
+                descr3: "",
+                price: "Скидка -7%",
+                buttonText: "Записаться"
+            },
+            {
+                duration: "Замена масла: Стандарт +",
+                descr: "Замена моторного масла и масляного фильтра",
+                descr1: "Замена воздушного фильтра",
+                descr2: "Замена салонного фильтра",
+                descr3: "Диагностика ходовой части",
+                price: "Скидка -10%",
+                buttonText: "Записаться"
+            },
+        ];
+
+        const container = document.getElementById('cards-container');
+
+        cardsData.forEach(card => {
+            const cardElement = document.createElement('div');
+            cardElement.className = 'cardP';
+
+            if (card.descr == ""){
+                cardElement.innerHTML = `
+                <h1>${card.duration}</h1>
+                <ul>  
+                </ul>
+                <p>${card.price}</p>
+                <a  href="podpiska-start.html"><button href="podpiska-start.html" style="margin-top:17px;">${card.buttonText}</button></a>`;
+            }else if (card.descr1 == ""){
+                cardElement.innerHTML = `
+                <h1>${card.duration}</h1>
+                <ul>
+                    <li>${card.descr}</li>    
+                </ul>
+                <p>${card.price}</p>
+                <a  href="podpiska-start.html"><button href="podpiska-start.html" style="margin-top:17px;">${card.buttonText}</button></a>`;
+            }else if (card.descr2 == ""){
+                cardElement.innerHTML = `
+                <h1>${card.duration}</h1>
+                <ul>
+                    <li>${card.descr}</li>    
+                    <li>${card.descr1}</li> 
+                </ul>
+                <p>${card.price}</p>
+                <a  href="podpiska-start.html"><button href="podpiska-start.html" style="margin-top:56px;">${card.buttonText}</button></a>`;
+            }else if (card.descr3 == ""){
+                cardElement.innerHTML = `
+                <h1>${card.duration}</h1>
+                <ul>
+                    <li>${card.descr}</li>    
+                    <li>${card.descr1}</li> 
+                    <li>${card.descr2}</li>
+                </ul>
+                <p>${card.price}</p>
+                <a  href="podpiska-start.html"><button href="podpiska-start.html" style="margin-top:36px;">${card.buttonText}</button></a>`;
+            }else{
+                cardElement.innerHTML = `
+                <h1>${card.duration}</h1>
+                <ul>
+                    <li>${card.descr}</li>    
+                    <li>${card.descr1}</li> 
+                    <li>${card.descr2}</li>
+                    <li>${card.descr3}</li>
+                </ul>
+                <p>${card.price}</p>
+                <a  href="podpiska-start.html"><button href="podpiska-start.html" style="margin-top:17px;">${card.buttonText}</button></a>`;
+            }
+
+            container.appendChild(cardElement);
+        });
+    </script>
+    </body>
+
+</html>
