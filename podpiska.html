@@ -34,8 +34,9 @@
     </footer>
 
     <script>
-const cardsData = [
-            {
+
+        const defaultCards = [
+        {
                 duration: "Замена масла: Стандарт +",
                 descr: "Замена моторного масла и масляного фильтра",
                 descr1: "Замена воздушного фильтра",
@@ -64,13 +65,24 @@ const cardsData = [
             },
         ];
 
-        const container = document.getElementById('cards-container');
 
-        cardsData.forEach(card => {
-            const cardElement = document.createElement('div');
-            cardElement.className = 'cardP';
 
-            if (card.descr == ""){
+
+
+
+
+ // Функция для отображения карточек
+ function displayCards() {
+            const cardsContainer = document.getElementById('cards-container');
+            const cardsData = JSON.parse(localStorage.getItem('cardsData')) || [];
+
+            cardsContainer.innerHTML = ''; // Очищаем контейнер перед добавлением новых карточек
+
+            cardsData.forEach(card => {
+                const cardElement = document.createElement('div');
+                cardElement.classList.add('cardP');
+
+                if (card.descr == ""){
                 cardElement.innerHTML = `
                 <h1>${card.duration}</h1>
                 <ul>  
@@ -117,8 +129,12 @@ const cardsData = [
                 <a  href="podpiska-start.html"><button href="podpiska-start.html" style="margin-top:17px;">${card.buttonText}</button></a>`;
             }
 
-            container.appendChild(cardElement);
-        });
+                cardsContainer.appendChild(cardElement);
+            });
+        }
+
+        // Инициализация отображения карточек при загрузке страницы
+        document.addEventListener('DOMContentLoaded', displayCards);
     </script>
     </body>
 
